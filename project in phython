@@ -1,0 +1,39 @@
+import random
+c=['s','w','g']
+user_point=0
+com_point=0
+chance=10
+i=0
+while i<chance:
+    i+=1
+    com=random.choice(c)
+    inp=input("enter your choice :")
+    if inp==com:
+        user_point+=1
+        com_point+=1
+        print("draw")
+    if inp=='w' and com=='g':
+        user_point+=2
+        print('win')
+    if inp=='w' and com=='s':
+        com_point+=2
+        print("lose")
+    if inp=='g' and com=='w':
+        com_point+=2
+        print('lose')
+    if inp=='g' and com=='s':
+        user_point+=2
+        print('win')
+    if inp=='s' and com=='w':
+        user_point+=2
+        print('win')
+    if inp=='s' and com=='g':
+        com_point+=2
+        print("lose")
+print("Score Card:")
+print("your score=",user_point)
+print("Enemy score=",com_point)
+if user_point>com_point:
+    print('You Win at point',user_point)
+else:
+    print("you lose at point",com_point-user_point)
